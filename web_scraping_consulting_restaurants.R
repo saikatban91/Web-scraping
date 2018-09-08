@@ -1,7 +1,8 @@
 #loading rvest library for scraping 
 library(rvest)
 library(tidyverse)
-# website loading
+# website loading; this is a random website and the identity of the original website 
+# used for this purpose cannot be shared publicly at this point
 webpage <- "https://www.abcde.com/search?search_terms=xyz&geo_location_terms=pqrst%2C%20AB&s=default"
 res_html <- read_html(webpage)
 # Selectorgadget coupled with html analysis of the webpage gave us the CSS; the nodes are converted into text 
