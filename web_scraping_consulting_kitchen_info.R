@@ -1,13 +1,14 @@
 library(rvest)
 library(tidyverse)
-# scraping qwerty for commercial kitchen info
+# scraping qwerty for commercial kitchen info; this is a random website and 
+# the original source used for scraping cannot be shared publicly at this point
 webpage <- "http://www.qwerty.com/maps.php"
 url <- read_html(webpage)
 url_parent <- url %>% html_nodes("table")
 url_nodes <- url_parent %>% html_nodes("br+ a")
 names <- url_parent %>% html_nodes("br+ a") %>% html_text()
 links <- url_parent %>% html_nodes("br+ a") %>% html_attr("href")
-# found the parent node for kitcheninfos and extrcted the necessary info
+# found the parent node for kitcheninfos and extracted the necessary info
 parent_node <- url %>% html_nodes("div#kitcheninfos")
   names <-  sapply(parent_node, function(x){x %>% html_nodes("h1") %>% html_text(trim = T)})
   address <- sapply(parent_node, function(x){x %>% html_nodes("span.b") %>% html_text(trim = T)})
