@@ -1,4 +1,4 @@
-# Data-Wrangling
+# Web scraping
 ## Methods and data sources
 ### rvest library and basic html language to scrape information from the internet; it also has codes to use the twitter API to download data from the social network database.
 ## Privacy and website sources
